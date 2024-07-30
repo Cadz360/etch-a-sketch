@@ -2,6 +2,7 @@ const sketchContainer = document.querySelector(".sketch-container");
 const squaresInput = document.querySelector("input")
 
 squaresInput.addEventListener("change", () => {
+    sketchContainer.replaceChildren();
     for (let i = 0; i < squaresInput.value; i++){
         const column = document.createElement("div")
         column.classList.add("column");
@@ -12,7 +13,8 @@ squaresInput.addEventListener("change", () => {
         }
         sketchContainer.appendChild(column)
     }
-    //remove all divs when input has been changed
+
+    //next fix: remove all divs when input has been changed
 
 })
 
