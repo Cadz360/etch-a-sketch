@@ -1,6 +1,11 @@
 const sketchContainer = document.querySelector(".sketch-container");
 const squaresInput = document.querySelector("input")
 
+const randomRGB = () => {
+    return 'rgb(' + Math.round(Math.random()*255) + ',' 
+    + Math.round(Math.random()*255) + ',' + Math.round(Math.random()*255) + ')';
+}
+
 squaresInput.addEventListener("change", () => {
     sketchContainer.replaceChildren();
     for (let i = 0; i < squaresInput.value; i++){
@@ -11,7 +16,7 @@ squaresInput.addEventListener("change", () => {
             row.classList.add("row")
             column.appendChild(row)
             row.addEventListener('mouseover', () => {
-                row.style.backgroundColor = 'black'
+                row.style.backgroundColor = randomRGB()
             })
         }
         sketchContainer.appendChild(column)
