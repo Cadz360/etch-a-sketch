@@ -10,18 +10,11 @@ squaresInput.addEventListener("change", () => {
             const row = document.createElement("div");
             row.classList.add("row")
             column.appendChild(row)
+            row.addEventListener('mouseover', () => {
+                row.style.backgroundColor = 'black'
+            })
         }
         sketchContainer.appendChild(column)
     }
 
-    //next fix: remove all divs when input has been changed
-
 })
-
-const grids = document.querySelectorAll(".row")
-
-grids.forEach(grid => {
-    grid.addEventListener('mouseenter', () => {
-        grid.style.backgroundColor = 'black';
-    })
-});
